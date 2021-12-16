@@ -9,7 +9,6 @@ import org.kodein.di.android.closestDI
 
 class HomeActivity : AppCompatActivity(), DIAware {
     override val di: DI by closestDI()
-
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {

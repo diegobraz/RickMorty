@@ -2,7 +2,7 @@ package kanda.lab.domain
 
 data class Character(
     val created: String,
-    val episode: List<Any>,
+    val episode: List<String>,
     val gender: String,
     val id: Int,
     val image: String,

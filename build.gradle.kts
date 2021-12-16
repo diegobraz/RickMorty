@@ -16,6 +16,7 @@ buildscript {
         classpath("com.squareup.sqldelight:gradle-plugin:1.4.4")
         classpath("com.adarshr:gradle-test-logger-plugin:3.0.0")
         classpath ("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
     }
 }
 
