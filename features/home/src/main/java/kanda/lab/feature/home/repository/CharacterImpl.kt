@@ -21,7 +21,7 @@ class CharacterImpl @Inject constructor(
     ) {
         withContext(dispatcher){
             val showCharacter = async {
-                characterApi.getAllCharacter()
+                characterApi.getAllCharacter(1)
             }
             processData(resultCallback, showCharacter.await())
         }

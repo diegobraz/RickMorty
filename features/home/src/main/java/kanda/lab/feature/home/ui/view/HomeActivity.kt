@@ -4,9 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kanda.lab.feature.home.ui.databinding.ActivityMainBinding
-import org.kodein.di.DI
-import org.kodein.di.DIAware
-import org.kodein.di.android.closestDI
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity()

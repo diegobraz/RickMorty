@@ -6,15 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import kanda.lab.domain.Character
 import kanda.lab.feature.home.ui.adapter.CharacterListAdapter
 import kanda.lab.feature.home.ui.databinding.FragmentCharacterListBinding
 import kanda.lab.feature.home.ui.viewModel.CharacterViewModel
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CharacterListFragment() : Fragment(){
+class CharacterListFragment: Fragment(){
 
     private val viewModel by lazy {
         ViewModelProvider(this)[CharacterViewModel::class.java]
@@ -33,15 +36,17 @@ class CharacterListFragment() : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.loadCharacter()
-        viewModel.listOfCharacter.observe(viewLifecycleOwner,{characters ->
-            loadRecycleView(characters)
-        })
+//        viewModel.loadCharacter()
+        loadRecycleView()
     }
 
-    private fun loadRecycleView(characters: List<Character>) {
+    private fun loadRecycleView() {
         binding.listCharacteres.adapter = characterAdapter
         binding.listCharacteres.layoutManager = GridLayoutManager(view?.context,2)
-        characterAdapter.submitList(characters)
+        lifecycleScope.launch{
+            viewModel.listData.collect {
+                characterAdapter.submitData(it)
+            }
+        }
     }
 }

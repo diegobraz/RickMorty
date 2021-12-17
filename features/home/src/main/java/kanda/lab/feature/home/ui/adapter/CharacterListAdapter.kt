@@ -2,6 +2,8 @@ package kanda.lab.feature.home.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingData
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +11,7 @@ import com.bumptech.glide.Glide
 import kanda.lab.domain.Character
 import kanda.lab.feature.home.ui.databinding.CharacterItemBinding
 
-class CharacterListAdapter: ListAdapter<Character, CharacterListAdapter.CharacterViewHolder>(
+class CharacterListAdapter: PagingDataAdapter<Character, CharacterListAdapter.CharacterViewHolder>(
     DiffCallback()
 ) {
 
@@ -20,7 +22,7 @@ class CharacterListAdapter: ListAdapter<Character, CharacterListAdapter.Characte
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position)!!)
     }
 
     inner class CharacterViewHolder(

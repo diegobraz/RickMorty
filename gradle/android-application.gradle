@@ -2,7 +2,7 @@ apply plugin: 'org.jmailen.kotlinter'
 apply plugin: 'com.adarshr.test-logger'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
     defaultConfig {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
