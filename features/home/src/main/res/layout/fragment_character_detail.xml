@@ -1,119 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.CharacterDetail">
-    <androidx.appcompat.widget.AppCompatImageView
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/character_image"
-        app:layout_constraintDimensionRatio="1:1"
-        tools:src="@tools:sample/backgrounds/scenic[7]"
-        android:scaleType="fitXY"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/character_full_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Full Name"
-        android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/black"
-        android:layout_marginStart="16dp"
-        android:textSize="28sp"
-        app:layout_constraintTop_toBottomOf="@id/character_image"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/character_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Alive"
-        android:layout_marginTop="6dp"
-        android:textStyle="italic"
-        android:textColor="@color/black"
-        android:layout_marginStart="16dp"
-        android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@id/character_full_name"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-    <View
-        android:id="@+id/final_price_divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character_status"
-      />
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/image_genre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/character_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:src="@drawable/ic_male_black_24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="14dp"
-        />
+        android:layout_height="match_parent"
+        tools:context=".view.CharacterDetail">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/character_origin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/origin"
-        android:layout_marginTop="15dp"
-        android:textStyle="italic"
-        android:layout_marginStart="16dp"
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@id/character_status"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Full Name"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/character_origin_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Earth"
-        android:layout_marginTop="6dp"
-        android:textStyle="italic"
-        android:layout_marginStart="16dp"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/character_origin"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        <ImageView
+            android:id="@+id/circle_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/ic_circle_alive"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_full_name" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/character_specie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/specie"
-        android:layout_marginTop="15dp"
-        android:textStyle="italic"
-        android:layout_marginStart="16dp"
-        android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@id/character_origin_txt"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@id/circle_status"
+            app:layout_constraintTop_toBottomOf="@id/character_full_name"
+            tools:text="Alive" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/character_specie_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Human"
-        android:layout_marginTop="6dp"
-        android:textStyle="italic"
-        android:layout_marginStart="16dp"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/character_specie"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/character_card"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_status">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/character_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/backgrounds/scenic[7]" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_male_black_24dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_origin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/origin"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_card" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_origin_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_origin"
+            tools:text="Earth" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_specie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/specie"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_origin_txt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_specie_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_specie"
+            tools:text="Human" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/type"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_specie_txt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_type_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_type"
+            tools:text="Human" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/location"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_type_txt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_location_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_location"
+            tools:text="Human" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/created"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_location_txt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/character_created_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_created"
+            tools:text="Human" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

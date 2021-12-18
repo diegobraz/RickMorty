@@ -14,12 +14,12 @@ import javax.inject.Inject
 
 class CharacterImpl @Inject constructor(
     private val characterApi: CharacterApi
-):CharacterDataSource{
+) : CharacterDataSource {
     override suspend fun getCharacter(
         dispatcher: CoroutineDispatcher,
         resultCallback: (result: NetworkResponse<List<Character>, ErrorResponse>) -> Unit
     ) {
-        withContext(dispatcher){
+        withContext(dispatcher) {
             val showCharacter = async {
                 characterApi.getAllCharacter(1)
             }

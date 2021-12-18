@@ -1,6 +1,5 @@
 package kanda.lab.feature.home.ui.view
 
-import android.graphics.Path
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,14 +19,14 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CharacterListFragment: Fragment(){
+class CharacterListFragment : Fragment() {
 
     private val viewModel by lazy {
         ViewModelProvider(this)[CharacterViewModel::class.java]
     }
     private val characterAdapter by lazy {
         CharacterListAdapter(
-            onClick ={ character ->
+            onClick = { character ->
                 onCreateCharacterDetail(character)
             }
         )
@@ -47,14 +46,13 @@ class CharacterListFragment: Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        viewModel.loadCharacter()
         loadRecycleView()
     }
 
     private fun loadRecycleView() {
         binding.listCharacteres.adapter = characterAdapter
-        binding.listCharacteres.layoutManager = GridLayoutManager(view?.context,2)
-        lifecycleScope.launch{
+        binding.listCharacteres.layoutManager = GridLayoutManager(view?.context, 2)
+        lifecycleScope.launch {
             viewModel.listData.collect {
                 characterAdapter.submitData(it)
             }
@@ -63,7 +61,7 @@ class CharacterListFragment: Fragment(){
 
     private fun onCreateCharacterDetail(character: Character) {
         val bundle = Bundle()
-        bundle.putSerializable("character",character)
-        controller.navigate(R.id.action_characterListFragment_to_characterDetail,bundle)
+        bundle.putSerializable("character", character)
+        controller.navigate(R.id.action_characterListFragment_to_characterDetail, bundle)
     }
 }

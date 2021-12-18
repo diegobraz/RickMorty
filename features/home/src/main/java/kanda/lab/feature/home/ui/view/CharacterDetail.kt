@@ -25,22 +25,48 @@ class CharacterDetail : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val character = arguments?.getSerializable("character") as Character
-        Glide.with(binding.root).load(character.image)
-            .into(binding.characterImage)
+        loadInformation(character)
+    }
+
+    private fun loadInformation(character: Character) {
+        loadImage(character)
         binding.characterStatus.text = character.status
         binding.characterFullName.text = character.name
         binding.characterOriginTxt.text = character.origin.name
         binding.characterSpecieTxt.text = character.species
-        when(character.gender){
-            "Male" ->{
+        binding.characterLocationTxt.text = character.location.name
+        binding.characterCreatedTxt.text = character.created
+        if (character.type.isBlank()) {
+            binding.characterTypeTxt.text = character.species
+        } else {
+            binding.characterTypeTxt.text = character.type
+        }
+        when (character.gender) {
+            "Male" -> {
                 binding.imageGenre.setImageResource(R.drawable.ic_male_black_24dp)
             }
-            "Female" ->{
+            "Female" -> {
                 binding.imageGenre.setImageResource(R.drawable.ic_female_black_24dp)
             }
-            else ->{
+            else -> {
                 binding.imageGenre.visibility = View.INVISIBLE
             }
         }
+        when (character.status) {
+            "Alive" -> {
+                binding.circleStatus.setImageResource(R.drawable.ic_circle_alive)
+            }
+            "Dead" -> {
+                binding.circleStatus.setImageResource(R.drawable.ic_circle_dead)
+            }
+            "unknown" -> {
+                binding.circleStatus.setImageResource(R.drawable.ic_circle_unknown)
+            }
+        }
+    }
+
+    private fun loadImage(character: Character) {
+        Glide.with(binding.root).load(character.image)
+            .into(binding.characterImage)
     }
 }
