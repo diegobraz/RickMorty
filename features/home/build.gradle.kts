@@ -31,6 +31,8 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.37")
     implementation(  "com.github.bumptech.glide:glide:4.12.0")
     implementation("androidx.paging:paging-runtime-ktx:3.1.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
 
 
     testImplementation(projects.platform.foundation.networking)

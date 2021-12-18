@@ -43,7 +43,7 @@
         android:id="@+id/circle_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="3dp"
         android:src="@drawable/ic_circle_alive"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,17 +58,6 @@
         android:layout_marginStart="4dp"
         app:layout_constraintStart_toEndOf="@id/circle_status"
         app:layout_constraintTop_toBottomOf="@id/character_name"
-        tools:text="Alive" />
-    <TextView
-        android:id="@+id/specie_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:layout_marginTop="3dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintStart_toEndOf="@id/status_name"
-        app:layout_constraintTop_toBottomOf="@id/character_name"
-        tools:text="Alive" />
-
+        tools:text="Alive - Human" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

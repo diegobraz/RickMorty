@@ -9,6 +9,23 @@
         android:id="@+id/characterListFragment"
         android:name="kanda.lab.feature.home.ui.view.CharacterListFragment"
         android:label="fragment_character_list"
-        tools:layout="@layout/fragment_character_list" />
+        tools:layout="@layout/fragment_character_list" >
+        <action
+            android:id="@+id/action_characterListFragment_to_characterDetail"
+            app:destination="@id/characterDetail"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/characterListFragment" />
+        <argument
+            android:name="character"
+            app:argType="kanda.lab.domain.Character" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetail"
+        android:name="kanda.lab.feature.home.ui.view.CharacterDetail"
+        android:label="fragment_character_detail"
+        tools:layout="@layout/fragment_character_detail" />
 
 </navigation>

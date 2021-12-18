@@ -10,7 +10,9 @@ import kanda.lab.domain.Character
 import kanda.lab.feature.home.ui.R
 import kanda.lab.feature.home.ui.databinding.CharacterItemBinding
 
-class CharacterListAdapter: PagingDataAdapter<Character, CharacterListAdapter.CharacterViewHolder>(
+class CharacterListAdapter(
+    val onClick: (character:Character) -> Unit,
+): PagingDataAdapter<Character, CharacterListAdapter.CharacterViewHolder>(
     DiffCallback()
 ) {
 
@@ -31,8 +33,7 @@ class CharacterListAdapter: PagingDataAdapter<Character, CharacterListAdapter.Ch
             Glide.with(binding.root).load(character.image)
                 .into(binding.characterImage)
             binding.characterName.text = character.name
-            binding.statusName.text = character.status
-            binding.specieName.text = "- ${character.species}"
+            binding.statusName.text = "${character.status} - ${character.species}"
             when(character.status){
                 "Alive" ->{
                     binding.circleStatus.setImageResource(R.drawable.ic_circle_alive)
@@ -44,6 +45,13 @@ class CharacterListAdapter: PagingDataAdapter<Character, CharacterListAdapter.Ch
                     binding.circleStatus.setImageResource(R.drawable.ic_circle_unknown)
                 }
             }
+            onClickListener(character, binding)
+        }
+    }
+
+    private fun onClickListener(character: Character, binding:CharacterItemBinding) {
+        binding.characterImage.setOnClickListener {
+          onClick(character)
         }
     }
 
