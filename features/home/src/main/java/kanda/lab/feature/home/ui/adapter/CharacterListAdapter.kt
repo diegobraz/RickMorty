@@ -2,13 +2,12 @@ package kanda.lab.feature.home.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingData
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kanda.lab.domain.Character
+import kanda.lab.feature.home.ui.R
 import kanda.lab.feature.home.ui.databinding.CharacterItemBinding
 
 class CharacterListAdapter: PagingDataAdapter<Character, CharacterListAdapter.CharacterViewHolder>(
@@ -32,6 +31,19 @@ class CharacterListAdapter: PagingDataAdapter<Character, CharacterListAdapter.Ch
             Glide.with(binding.root).load(character.image)
                 .into(binding.characterImage)
             binding.characterName.text = character.name
+            binding.statusName.text = character.status
+            binding.specieName.text = "- ${character.species}"
+            when(character.status){
+                "Alive" ->{
+                    binding.circleStatus.setImageResource(R.drawable.ic_circle_alive)
+                }
+                "Dead" ->{
+                    binding.circleStatus.setImageResource(R.drawable.ic_circle_dead)
+                }
+                "unknown" ->{
+                    binding.circleStatus.setImageResource(R.drawable.ic_circle_unknown)
+                }
+            }
         }
     }
 

@@ -12,7 +12,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-class RickMortyPagingSource(
+class RickMortyPagingImpl(
     private val api: CharacterApi,
     private val dispatcher: CoroutineDispatcher
 ) : PagingSource<Int, Character>() {

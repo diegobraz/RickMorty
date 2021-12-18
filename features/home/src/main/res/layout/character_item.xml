@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="180dp"
-    android:layout_height="250dp"
-    android:layout_margin="8dp"
-    >
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/character_item_card"
@@ -31,12 +30,45 @@
         android:id="@+id/character_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
         android:textAlignment="center"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/character_item_card"
-        tools:text="Rick Sanchez " />
+        tools:text="Rick Sanchez" />
+
+    <ImageView
+        android:id="@+id/circle_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/ic_circle_alive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_name" />
+
+    <TextView
+        android:id="@+id/status_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@id/circle_status"
+        app:layout_constraintTop_toBottomOf="@id/character_name"
+        tools:text="Alive" />
+    <TextView
+        android:id="@+id/specie_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@id/status_name"
+        app:layout_constraintTop_toBottomOf="@id/character_name"
+        tools:text="Alive" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
