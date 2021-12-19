@@ -20,20 +20,23 @@ dependencies {
     implementation(libs.kotlin.serialization)
     implementation(libs.bundles.components)
     implementation(libs.retrofit)
+    //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+    //Legacy
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    //Retrofit
     implementation( "com.squareup.retrofit2:converter-gson:2.9.0")
+    //Hilt
     implementation("com.google.dagger:hilt-android:2.37")
     implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    //Okhttp3
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     kapt("com.google.dagger:hilt-android-compiler:2.37")
+    //Glide
     implementation(  "com.github.bumptech.glide:glide:4.12.0")
+    //Paging
     implementation("androidx.paging:paging-runtime-ktx:3.1.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
-
 
     testImplementation(projects.platform.foundation.networking)
     testImplementation(projects.platform.testing)

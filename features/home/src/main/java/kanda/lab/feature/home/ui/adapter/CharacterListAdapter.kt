@@ -15,7 +15,6 @@ class CharacterListAdapter(
 ): PagingDataAdapter<Character, CharacterListAdapter.CharacterViewHolder>(
     DiffCallback()
 ) {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = CharacterItemBinding.inflate(inflater,parent,false)
@@ -57,7 +56,6 @@ class CharacterListAdapter(
 
     class DiffCallback : DiffUtil.ItemCallback<Character>() {
         override fun areItemsTheSame(oldItem: Character, newItem: Character) = oldItem == newItem
-
         override fun areContentsTheSame(oldItem: Character, newItem: Character) = oldItem.id == newItem.id
     }
 }

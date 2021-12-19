@@ -34,7 +34,6 @@ class CharacterListFragment : Fragment() {
     private val controller by lazy {
         findNavController()
     }
-
     private val binding by lazy { FragmentCharacterListBinding.inflate(layoutInflater) }
 
     override fun onCreateView(

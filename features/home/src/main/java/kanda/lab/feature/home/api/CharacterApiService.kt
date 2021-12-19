@@ -6,7 +6,8 @@ import kanda.lab.feature.home.network.NetworkResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface CharacterApi {
+interface CharacterApiService {
     @GET("character")
-   suspend fun getAllCharacter(@Query("page") index: Int): NetworkResponse<CharactersResponse, ErrorResponse>
+    suspend fun getAllCharacter(@Query("page") index: Int):
+            NetworkResponse<CharactersResponse, ErrorResponse>
 }

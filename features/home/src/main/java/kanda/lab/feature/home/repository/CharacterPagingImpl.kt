@@ -1,19 +1,18 @@
-package kanda.lab.feature.home.paging
+package kanda.lab.feature.home.repository.imp
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import kanda.lab.domain.Character
 import kanda.lab.domain.CharactersResponse
-import kanda.lab.feature.home.api.CharacterApi
+import kanda.lab.feature.home.api.CharacterApiService
 import kanda.lab.feature.home.network.ErrorResponse
 import kanda.lab.feature.home.network.NetworkResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
-import java.lang.Exception
 
 class RickMortyPagingImpl(
-    private val api: CharacterApi,
+    private val apiService: CharacterApiService,
     private val dispatcher: CoroutineDispatcher
 ) : PagingSource<Int, Character>() {
     override fun getRefreshKey(state: PagingState<Int, Character>): Int? {
@@ -23,7 +22,7 @@ class RickMortyPagingImpl(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         return withContext(dispatcher){
             val currentPage = params.key ?: 1
-            val response = async { api.getAllCharacter(currentPage) }
+            val response = async { apiService.getAllCharacter(currentPage) }
             val data = processData(response.await())
             val responseData = mutableListOf<Character>()
             responseData.addAll(data)
@@ -45,5 +44,4 @@ class RickMortyPagingImpl(
             }
         }
     }
-
 }

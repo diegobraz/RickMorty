@@ -23,11 +23,12 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.kodein)
     implementation(libs.kodeinConf)
+    //Hilt
     implementation("com.google.dagger:hilt-android:2.37")
     kapt("com.google.dagger:hilt-android-compiler:2.37")
+    //Retrofit
     implementation( "com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.google.dagger:hilt-android:2.37")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    //Okhttp3
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     androidTestImplementation(projects.platform.testing)
     androidTestImplementation(libs.kodeinAndroid)

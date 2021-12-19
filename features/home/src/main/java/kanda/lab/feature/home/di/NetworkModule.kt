@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kanda.lab.feature.home.api.CharacterApi
+import kanda.lab.feature.home.api.CharacterApiService
 import kanda.lab.feature.home.network.NetworkResponseAdapterFactory
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
@@ -36,10 +36,9 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun LoggingClient(authInterceptor: Interceptor): OkHttpClient {
+    fun loggingClient(authInterceptor: Interceptor): OkHttpClient {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
-
         return OkHttpClient.Builder()
             .readTimeout(15, TimeUnit.SECONDS)
             .connectTimeout(15, TimeUnit.SECONDS)
@@ -58,9 +57,10 @@ class NetworkModule {
             .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .build()
     }
+
     @Singleton
     @Provides
-    fun CharacterApi(retrofit: Retrofit): CharacterApi {
-        return retrofit.create(CharacterApi::class.java)
+    fun CharacterApi(retrofit: Retrofit): CharacterApiService {
+        return retrofit.create(CharacterApiService::class.java)
     }
 }

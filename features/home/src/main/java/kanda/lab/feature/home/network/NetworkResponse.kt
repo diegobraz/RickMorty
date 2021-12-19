@@ -3,7 +3,6 @@ package kanda.lab.feature.home.network
 import java.io.IOException
 
 sealed class NetworkResponse<out T : Any, out U : Any> {
-
     data class Success<T : Any>(val body: T) : NetworkResponse<T, Nothing>()
 
     data class Error<T : Any>(val erro: IOException) : NetworkResponse<T, Nothing>()
