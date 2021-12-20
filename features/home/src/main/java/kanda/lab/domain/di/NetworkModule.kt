@@ -21,7 +21,7 @@ import javax.inject.Singleton
 class NetworkModule {
     @Singleton
     @Provides
-    fun providesInteceptor(): Interceptor {
+    fun providesInterceptor(): Interceptor {
         return Interceptor { chain ->
             val newUrl: HttpUrl = chain.request().url
                 .newBuilder()
@@ -49,7 +49,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun providesRetrofitInteance(logginClient: OkHttpClient): Retrofit {
+    fun providesRetrofitInstance(logginClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://rickandmortyapi.com/api/")
             .client(logginClient)
@@ -60,7 +60,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun CharacterApi(retrofit: Retrofit): CharacterApiService {
+    fun characterApi(retrofit: Retrofit): CharacterApiService {
         return retrofit.create(CharacterApiService::class.java)
     }
 }
