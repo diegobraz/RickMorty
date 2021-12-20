@@ -1,8 +1,8 @@
-package kanda.lab.domain.model
+package kanda.lab.domain
 
 import java.io.Serializable
 
-data class Location(
+data class Origin(
     val name: String,
     val url: String
 ):Serializable

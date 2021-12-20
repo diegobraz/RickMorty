@@ -1,4 +1,4 @@
-package kanda.lab.domain.model
+package kanda.lab.domain
 
 data class Info(
     val count: Int,

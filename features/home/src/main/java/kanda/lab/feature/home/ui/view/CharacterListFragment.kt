@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
-import kanda.lab.domain.model.Character
+import kanda.lab.domain.Character
 import kanda.lab.feature.home.ui.R
 import kanda.lab.feature.home.ui.adapter.CharacterListAdapter
 import kanda.lab.feature.home.ui.databinding.FragmentCharacterListBinding

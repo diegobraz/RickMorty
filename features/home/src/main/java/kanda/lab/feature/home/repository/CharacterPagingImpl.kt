@@ -2,8 +2,8 @@ package kanda.lab.feature.home.repository
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import kanda.lab.domain.model.Character
-import kanda.lab.domain.model.CharactersResponse
+import kanda.lab.domain.Character
+import kanda.lab.domain.CharactersResponse
 import kanda.lab.feature.home.api.CharacterApiService
 import kanda.lab.domain.network.ErrorResponse
 import kanda.lab.domain.network.NetworkResponse
