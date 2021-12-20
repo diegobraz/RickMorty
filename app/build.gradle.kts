@@ -25,11 +25,16 @@ dependencies {
     implementation(libs.kodeinConf)
     //Hilt
     implementation("com.google.dagger:hilt-android:2.37")
+    implementation("androidx.paging:paging-common-ktx:3.1.0")
     kapt("com.google.dagger:hilt-android-compiler:2.37")
     //Retrofit
     implementation( "com.squareup.retrofit2:converter-gson:2.9.0")
     //Okhttp3
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    // Optional -- Mockito framework
+    testImplementation ("org.mockito:mockito-core:1.10.19")
+    // Required -- JUnit 4 framework
+    testImplementation("junit:junit:4.12")
     androidTestImplementation(projects.platform.testing)
     androidTestImplementation(libs.kodeinAndroid)
     androidTestImplementation(libs.bundles.android.testing)

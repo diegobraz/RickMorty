@@ -1,11 +1,11 @@
-package kanda.lab.feature.home.di
+package kanda.lab.domain.di
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kanda.lab.feature.home.api.CharacterApiService
-import kanda.lab.feature.home.network.NetworkResponseAdapterFactory
+import kanda.lab.domain.network.NetworkResponseAdapterFactory
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

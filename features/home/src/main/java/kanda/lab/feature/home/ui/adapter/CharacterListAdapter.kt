@@ -6,12 +6,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kanda.lab.domain.Character
+import kanda.lab.domain.model.Character
 import kanda.lab.feature.home.ui.R
 import kanda.lab.feature.home.ui.databinding.CharacterItemBinding
 
 class CharacterListAdapter(
-    val onClick: (character:Character) -> Unit,
+    val onClick: (character: Character) -> Unit,
 ): PagingDataAdapter<Character, CharacterListAdapter.CharacterViewHolder>(
     DiffCallback()
 ) {

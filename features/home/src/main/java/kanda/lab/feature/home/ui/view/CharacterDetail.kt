@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import kanda.lab.domain.Character
+import kanda.lab.domain.model.Character
 import kanda.lab.feature.home.ui.R
 import kanda.lab.feature.home.ui.databinding.FragmentCharacterDetailBinding
-import kanda.lab.feature.home.ui.databinding.FragmentCharacterListBinding
 
 class CharacterDetail : Fragment() {
 

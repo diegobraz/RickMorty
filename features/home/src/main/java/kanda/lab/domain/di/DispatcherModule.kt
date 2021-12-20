@@ -1,4 +1,4 @@
-package kanda.lab.feature.home.di
+package kanda.lab.domain.di
 
 import dagger.Module
 import dagger.Provides

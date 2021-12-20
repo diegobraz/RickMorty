@@ -1,6 +1,6 @@
 package com.example.warren.network
 
-import kanda.lab.feature.home.network.NetworkResponse
+import kanda.lab.domain.network.NetworkResponse
 import okhttp3.Request
 import okhttp3.ResponseBody
 import okio.Timeout

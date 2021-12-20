@@ -1,4 +1,4 @@
-package kanda.lab.domain
+package kanda.lab.domain.model
 
 import java.io.Serializable
 

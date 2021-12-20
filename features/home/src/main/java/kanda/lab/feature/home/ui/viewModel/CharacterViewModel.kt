@@ -8,8 +8,8 @@ import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kanda.lab.feature.home.api.CharacterApiService
-import kanda.lab.feature.home.di.IoDispatcher
-import kanda.lab.feature.home.repository.imp.RickMortyPagingImpl
+import kanda.lab.domain.di.IoDispatcher
+import kanda.lab.feature.home.repository.CharacterPagingImpl
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 
@@ -19,6 +19,6 @@ class CharacterViewModel @Inject constructor(
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
 ) : ViewModel(){
     val listData  = Pager(PagingConfig(pageSize = 1)){
-        RickMortyPagingImpl(characterApiService,dispatcher)
+        CharacterPagingImpl(characterApiService,dispatcher)
     }.flow.cachedIn(viewModelScope)
 }

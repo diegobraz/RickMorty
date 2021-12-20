@@ -1,17 +1,17 @@
-package kanda.lab.feature.home.repository.imp
+package kanda.lab.feature.home.repository
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import kanda.lab.domain.Character
-import kanda.lab.domain.CharactersResponse
+import kanda.lab.domain.model.Character
+import kanda.lab.domain.model.CharactersResponse
 import kanda.lab.feature.home.api.CharacterApiService
-import kanda.lab.feature.home.network.ErrorResponse
-import kanda.lab.feature.home.network.NetworkResponse
+import kanda.lab.domain.network.ErrorResponse
+import kanda.lab.domain.network.NetworkResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
 
-class RickMortyPagingImpl(
+class CharacterPagingImpl(
     private val apiService: CharacterApiService,
     private val dispatcher: CoroutineDispatcher
 ) : PagingSource<Int, Character>() {

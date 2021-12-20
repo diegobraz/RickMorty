@@ -1,4 +1,4 @@
-package kanda.lab.feature.home.network
+package kanda.lab.domain.network
 
 
 import retrofit2.Call

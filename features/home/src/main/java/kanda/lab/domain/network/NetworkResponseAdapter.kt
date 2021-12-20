@@ -1,4 +1,4 @@
-package kanda.lab.feature.home.network
+package kanda.lab.domain.network
 
 import com.example.warren.network.NetworkResponseCall
 import okhttp3.ResponseBody
