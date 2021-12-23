@@ -1,6 +1,5 @@
-package com.example.warren.network
+package kanda.lab.domain.network
 
-import kanda.lab.domain.network.NetworkResponse
 import okhttp3.Request
 import okhttp3.ResponseBody
 import okio.Timeout
@@ -54,7 +53,7 @@ internal class NetworkResponseCall<S : Any, E : Any>(
                     if (errorBody != null) {
                         callback.onResponse(
                             this@NetworkResponseCall,
-                            Response.success(NetworkResponse.ApiErro(errorBody, code))
+                            Response.success(NetworkResponse.ApiError(errorBody, code))
                         )
                     } else {
                         callback.onResponse(

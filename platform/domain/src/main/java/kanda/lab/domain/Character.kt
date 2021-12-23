@@ -15,4 +15,4 @@ data class Character(
     val status: String,
     val type: String,
     val url: String
-):Serializable
+) : Serializable

@@ -6,7 +6,6 @@ plugins {
 }
 
 dependencies {
-
     api(projects.platform.domain)
     implementation(libs.bundles.injection)
     implementation(libs.kotlin.coroutines)

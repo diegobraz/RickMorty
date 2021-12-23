@@ -37,10 +37,6 @@ dependencies {
     implementation(  "com.github.bumptech.glide:glide:4.12.0")
     //Paging
     implementation("androidx.paging:paging-runtime-ktx:3.1.0")
-    // Optional -- Mockito framework
-    testImplementation ("org.mockito:mockito-core:1.10.19")
-    // Required -- JUnit 4 framework
-    testImplementation("junit:junit:4.12")
 
     testImplementation(projects.platform.foundation.networking)
     testImplementation(projects.platform.testing)
