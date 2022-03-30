@@ -10,4 +10,5 @@ List of Rick and Morty Series Characters Using Api Public https://rickandmortyap
     <li>Retrofit</li>
     <li>Coroutines</li>
     <li>Glide</li>
+    <li>modularization</li>
 </ul>
