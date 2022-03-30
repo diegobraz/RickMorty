@@ -1,12 +1,12 @@
 # Rick e Morty
-## Descrição
-Lista de personagens da serie Rick e Morty utilizando Api publica https://rickandmortyapi.com/
+## Description
+List of Rick and Morty Series Characters Using Api Public https://rickandmortyapi.com/
 
 ## Tech Stack
 <ul>
     <li>Kotlin</li>
     <li>MVVM architecture</li>
-    <li>Hilt para injeção de dependência.</li>
+    <li>Hilt for dependency injection.</li>
     <li>Retrofit</li>
     <li>Coroutines</li>
     <li>Glide</li>
